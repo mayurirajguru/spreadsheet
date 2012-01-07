@@ -18,6 +18,19 @@ class TestWorksheet < Test::Unit::TestCase
     assert_equal true, sheet.need_number?(0.001)
     assert_equal true, sheet.need_number?(10000000.0)
   end
+  
+  def test_write_merged_cells
+  	sheet = Worksheet.new nil, nil
+  	#check if the merged_cells method is called    
+    #check merged_cells method working
+  end
+  
+  def test_should_not_merge_if_no_merged_cells
+  	sheet = Worksheet.new nil, nil  
+		#sheet.write_merged_cells
+		assert_equal '', sheet.data  			
+  end
+  
 end
     end
   end

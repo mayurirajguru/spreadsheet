@@ -76,5 +76,12 @@ module Spreadsheet
       assert_equal 30, @sheet.column(0).width
       assert_equal 20, @sheet.column(1).width
     end
+    
+    def test_attributes
+      assert_not_nil @sheet.merged_cells
+    	#test if attr reader is set for merged_cells 
+    	asset_equal Array.new, @sheet.merged_cells
+    end
+    
   end
 end
