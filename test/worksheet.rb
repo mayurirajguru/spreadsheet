@@ -80,7 +80,7 @@ module Spreadsheet
     def test_attributes
       assert_not_nil @sheet.merged_cells
     	#test if attr reader is set for merged_cells 
-    	asset_equal Array.new, @sheet.merged_cells
+    	assert_equal Array.new, @sheet.merged_cells
     end
     
   end
