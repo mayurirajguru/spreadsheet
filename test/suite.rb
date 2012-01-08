@@ -2,13 +2,15 @@
 # suite.rb -- spreadsheet -- 26.07.2011 -- zdavatz@ywesee.com
 
 require 'find'
+require 'rubygems'
 
-here = File.dirname(__FILE__)
+here = File.expand_path('./lib', File.dirname(__FILE__))
 
 $: << here
 
 Find.find(here) do |file|
-	if /(?<!suite)\.rb$/o.match(file)
+	#if /(?<!suite)\.rb$/o.match(file)
+	if /[^suite\W]\.rb$/o.match(file)
     #from Roel van der Hoorn vanderhoorn@gmail.com
     #should work for Ruby 1.8 and 1.9, without Oniguruma
 #  if /(?:^|\/)(?!suite)[^\/]+\.rb$/o
